@@ -2,7 +2,10 @@ body {
     background-color: black;
     color: rgb(0, 230, 0);
     font-family: 'Courier New', Courier, monospace;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
+    margin: 0;
 }
 
 form {
@@ -14,7 +17,39 @@ form {
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 230, 0);
+    margin-right: 20px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    font-weight: bold;
+}
+
+.navbar li {
+    margin: 20px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.navbar li a:hover {
+    color: white;
+}
+
 
 .row {
     margin-bottom: 20px;
@@ -30,8 +65,7 @@ input {
     border: 1px solid #ccc;
     padding: 8px;
     border-radius: 4px;
-  }
-
+}
 
 input[type="submit"] {
     background-color: rgb(0, 230, 0);
@@ -44,4 +78,20 @@ input[type="submit"] {
     color: red;
     margin-top: 5px;
     font-size: 14px;
+}
+
+
+#countdown {
+    font-size: 24px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+#clock {
+    font-size: 36px;
+    margin-top: 20px;
+    text-align: center;
 }
