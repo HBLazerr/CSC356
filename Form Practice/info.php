@@ -1,13 +1,18 @@
 <?php
-    session_start();
+// Starts new session
+session_start();
+// Stores welcome message
+$welcomeMsg = "";
 
-    $welcomeMsg = "";
+// Evaluates if user is logged in
+if ($_SESSION['isLoggedIn'] == 'true') {
+    // Sets custom welcome message
+    $welcomeMsg = "Welcome " . $_SESSION["username"];
 
-    if ($_SESSION['isLoggedIn'] == 'true') {
-        $welcomeMsg = "Welcome " . $_SESSION["username"];
-    } else {
-        header('Location: login.php');
-    }
+} else {
+    // Redirect user to login page if not logged in
+    header('Location: login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,4 +48,5 @@
     </div>
 
 </body>
+
 </html>
