@@ -1,3 +1,30 @@
+<?php
+    $errorMsg = "";
+
+    if ($_SERVER["REQUEST_METHOD"]=="POST") {
+        session_start();
+        require_once('dbconnect.php');
+
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        $sql = "SELECT * FROM users WHERE username='$username' AND password='$password' ";
+        $result = mysqli_query($conn, $sql);
+        $check = mysqli_fetch_array($result);
+
+        if (isset($check)) {
+            $_SESSION['id'] = session_id();
+            $_SESSION['isLoggedIn'] = 'true';
+            $_SESSION['username'] = $check["username"];
+
+            header('Location: info.php');
+        } else {
+            $errorMsg = 'Login failed, please try again.';
+        }
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +46,7 @@
     <h1>Welcome to Form Practice</h1>
 
     
-    <form name="loginForm" onsubmit="return validateForm();">
+    <form name="loginForm" onsubmit="return validateForm();" method="post" action="login.php">
         <h2>LOGIN</h2>
         
         <label for="username" id="usernameLabel">Username</label>
@@ -32,7 +59,11 @@
         
     </form>
 
-    <div id="errorMessage"></div>
+    <div id="errorMessage">
+        <?php
+            echo $errorMsg
+        ?>
+    </div>
 
     <!-- Includes footer content -->
     <?php include 'footer.php'; ?>

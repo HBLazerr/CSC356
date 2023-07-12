@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', Verdana, sans-serif;
+    background-color: white;
+}
+
+#puzzleScreen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('media/bg_hiddenObj.webp') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.puzzleText {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#hiddenObject {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    background: url('media/tempIcon.png') no-repeat center center;
+    cursor: default;
+}
+
+#phantomSite {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
