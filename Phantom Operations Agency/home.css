@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana;
+}
+
+body {
+    background-color: rgb(60, 60, 60);
+}
+
+.title {
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 75px 0px;
+}
+
+.tile {
+    flex: 1;
+    min-height: 400px;
+    max-width: 400px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 5px;
+}
