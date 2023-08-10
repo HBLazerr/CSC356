@@ -9,6 +9,10 @@ body {
     background-color: rgb(60, 60, 60);
 }
 
+a {
+    text-decoration: none;
+}
+
 .title {
     padding: 30px;
     text-align: center;
@@ -25,12 +29,12 @@ body {
 
 .tile {
     flex: 1;
-    min-height: 400px;
+    max-height: 400px;
     max-width: 400px;
     background-color: black;
     text-align: center;
+    align-items: center;
     color: white;
     padding: 20px;
-    margin: 15px;
     border-radius: 5px;
 }

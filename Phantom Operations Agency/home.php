@@ -34,14 +34,18 @@ if ($_SESSION['isLoggedIn'] == 'true') {
     <h1 class="title"><?php echo $welcomeMsg; ?></h1>
 
     <div class="container">
-        <div class="tile">
-            <h2>Stats</h2>
-            <p>This may pop up description when hovered.</p>
-        </div>
-        <div class="tile">
-            <h2>Missions</h2>
-            <p>This may pop up description when hovered.</p>
-        </div>
+        <a href="stats.php" style="text-decoration: none;">
+            <div class="tile">
+                <h2>Stats</h2>
+                <p>This may pop up description when hovered.</p>
+            </div>
+        </a>
+        <a href="missions.php" style="text-decoration: none;">
+            <div class="tile">
+                <h2>Missions</h2>
+                <p>This may pop up description when hovered.</p>
+            </div>
+        </a>
         <div class="tile">
             <h2>Contracts</h2>
             <p>This may pop up description when hovered.</p>
