@@ -3,8 +3,9 @@ $jsonData = '[
     {
         "missionId": 1,
         "title": "Retrieve Confidential Documents",
-        "description": "Infiltrate the enemys facility and recover highly classified documents.",
-        "location": "Unknown Facility",
+        "description": "Infiltrate the enemys train yard facility and recover highly classified documents.",
+        "location": "Abandoned Train Yard",
+        "image": "media/trainYard.jpg",
         "status": true
     },
     {
@@ -40,19 +41,39 @@ $missionsData = json_decode($jsonData, true);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="media/tempIcon.png" type="image/png">
     <link rel="stylesheet" href="missions.css">
+
+    <script src="home.js"></script> <!-- Reusing for Navbar animation -->
 
     <title>Missions | Phantom Operations Agency</title>
 </head>
 
 <body>
+
+    <div class="navbar" id="poaNavbar">
+        <div class="navbar-links" id="navbarLinks">
+            <a href="home.php">Home</a>
+            <a href="stats.php" style="text-decoration: line-through;">Stats</a> <!-- Under Construction -->
+            <a href="missions.php">Missions</a>
+            <a href="contracts.php" style="text-decoration: line-through;">Contracts</a> <!-- Under Construction -->
+            <a href="puzzle.php">Hide Site</a>
+        </div>
+        <a href="#" class="icon" onclick="toggleNavbar()">
+            <img src="media/POALogo.png" alt="POA Logo">
+        </a>
+    </div>
+
     <main>
         <h2 class="missionTitle">Current Mission</h2>
 
         <section class="currContainer">
 
             <div class="currMissionBox">
-                <img src="notyet.png" alt="Picture of ___">
+                <?php
+                if (isset($missionsData[0]['image'])) {
+                    echo '<img src="' . $missionsData[0]['image'] . '" alt="Picture of Train Yard" class="trainYardIMG">';
+                } ?>
 
                 <div class="currMissionContent">
                     <div class="currMissionTop">

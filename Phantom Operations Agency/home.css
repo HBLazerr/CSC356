@@ -9,32 +9,103 @@ body {
     background-color: rgb(60, 60, 60);
 }
 
-a {
-    text-decoration: none;
+body::-webkit-scrollbar {
+    display: none;
 }
 
+/* Navbar Styles */
+.navbar {
+    background-color: rgb(40, 40, 40);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.icon img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: -100%;
+    transition: left 0.3s ease;
+}
+
+.navbar.active .navbar-links {
+    left: 0;
+}
+
+.navbar-links a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.navbar-links a:hover {
+    color: rgb(0, 255, 0);
+}
+
+/* Home Page Content Styles */
 .title {
-    padding: 30px;
+    padding: 100px 50px;
     text-align: center;
-    font-size: 35px;
+    font-size: 50px;
     color: white;
 }
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 75px 0px;
+    padding: 0px 50px 50px;
+}
+
+.container a {
+    text-decoration: none;
 }
 
 .tile {
-    flex: 1;
-    max-height: 400px;
-    max-width: 400px;
+    position: relative;
+    width: 500px;
+    height: 400px;
     background-color: black;
     text-align: center;
-    align-items: center;
     color: white;
-    padding: 20px;
     border-radius: 5px;
+    padding: 20px;
+}
+
+.tile:hover {
+    -webkit-box-shadow: 0px 0px 23px 3px rgba(0, 255, 0, 0.9);
+    -moz-box-shadow: 0px 0px 23px 3px rgba(0, 255, 0, 0.9);
+    box-shadow: 0px 0px 23px 3px rgba(0, 255, 0, 0.9);
+}
+
+.shownHead {
+    position: absolute;
+    font-size: 24px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hiddenDesc {
+    display: none;
+    font-size: 18px;
+    padding-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tile:hover .hiddenDesc {
+    display: block;
+    opacity: 1;
 }

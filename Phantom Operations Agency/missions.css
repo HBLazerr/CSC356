@@ -7,10 +7,58 @@ body {
     overflow: hidden;
 }
 
+.trainYardIMG {
+    width: 300px;
+    height: 200px;
+    padding-right: 20px;
+}
+
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgb(40, 40, 40);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.icon img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: -100%;
+    transition: left 0.3s ease;
+}
+
+.navbar.active .navbar-links {
+    left: 0;
+}
+
+.navbar-links a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.navbar-links a:hover {
+    color: rgb(0, 255, 0);
+}
+
+/* Headers Styles */
 .pageTitle {
     margin: 100px 240px;
     font-size: 55px;
-    color: #0f0;
+    color: rgb(0, 255, 0);
 }
 
 .missionTitle {
@@ -18,9 +66,17 @@ body {
     font-size: 30px;
 }
 
+.missionName, .locationName {
+    margin: 5px 0px;
+}
+
+.descTitle {
+    margin: 0;
+}
+
 /* Current Mission Section Styles */
 .currContainer {
-    padding: 20px;
+    padding: 20px 50px 100px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -30,7 +86,8 @@ body {
 .currMissionBox {
     display: flex;
     align-items: center;
-    width: 600px;
+    width: 700px;
+    height: 250px;
     padding: 20px;
     background-color: gray;
     border-radius: 7px;
@@ -39,9 +96,11 @@ body {
 .currMissionContent {
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
 }
 
+.currMissionBottom {
+    margin-top: 30px;
+}
 
 /* Other Missions Styles */
 .othContainer {
@@ -62,7 +121,7 @@ body {
     display: flex;
     justify-content: space-between;
     text-align: center;
-    padding: 20px;
+    padding: 20px 50px;
 }
 
 .mission {
@@ -77,6 +136,6 @@ body {
 }
 
 .mission:hover {
-    background-color: #0f0;
+    background-color: rgb(0, 255, 0);
     color: black;
 }

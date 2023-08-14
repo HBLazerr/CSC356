@@ -38,7 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link rel="icon" href="media/tempIcon.png" type="image/png">
   <link rel="stylesheet" href="login.css" />
+
   <script src="validate.js"></script>
 
   <title>Login | Phantom Operations Agency</title>
@@ -46,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
   <video src="media/CodeScrollVideo.mp4" autoplay loop muted></video>
-  <h1>Welcome to Phantom Operations Agency</h1>
+  <h1 class="title">Welcome to Phantom Operations Agency</h1>
 
   <form name="loginForm" onsubmit="return validateForm();" method="post" action="login.php">
     <h2>LOGIN</h2>
